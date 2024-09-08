@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RezerveBelitTotal" Class="LSC_BeliteHavaPeymaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=reserveairplane;Integrated Security=True" SettingsObjectName="RezerveBeliteHavaPeimaCS.Properties.Settings" SettingsPropertyName="reserveairplaneConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customers" Member="Customers">
+    <Type Name="Custumer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Namesname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FaxNum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Custumer_RezerveTicket" Member="RezerveTickets" ThisKey="CustomerID" OtherKey="RezerverID" Type="RezerveTicket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RezerveTickets" Member="RezerveTickets">
+    <Type Name="RezerveTicket">
+      <Column Name="RezerveID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RezerveDate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StaffID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RezerverID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QuanTity" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BianehPardakhti" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mandeh" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Custumer_RezerveTicket" Member="Custumer" ThisKey="RezerverID" OtherKey="CustomerID" Type="Custumer" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ServicesDef_RezerveTicket" Member="ServicesDef" ThisKey="ServiceID" OtherKey="ServiceID" Type="ServicesDef" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="StaffsTable_RezerveTicket" Member="StaffsTable" ThisKey="StaffID" OtherKey="StaffID" Type="StaffsTable" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServicesDef" Member="ServicesDefs">
+    <Type Name="ServicesDef">
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceDescript" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ServiceDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpireBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ServiceTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ServicesDef_RezerveTicket" Member="RezerveTickets" ThisKey="ServiceID" OtherKey="ServiceID" Type="RezerveTicket" />
+      <Association Name="ServiceType_ServicesDef" Member="ServiceType" ThisKey="ServiceTypeID" OtherKey="ServiceTypeID" Type="ServiceType" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceTypes" Member="ServiceTypes">
+    <Type Name="ServiceType">
+      <Column Name="ServiceTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceDesCript" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ServiceType_ServicesDef" Member="ServicesDefs" ThisKey="ServiceTypeID" OtherKey="ServiceTypeID" Type="ServicesDef" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StaffsTable" Member="StaffsTables">
+    <Type Name="StaffsTable">
+      <Column Name="StaffID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameSname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FaxNum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="StaffsTable_RezerveTicket" Member="RezerveTickets" ThisKey="StaffID" OtherKey="StaffID" Type="RezerveTicket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.userInfo" Member="userInfos">
+    <Type Name="userInfo">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.xtblBelitha" Member="xtblBelithas">
+    <Type Name="xtblBelitha">
+      <Column Name="NameSname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ServiceDescript" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RezerveID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RezerveDate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QuanTity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.xtblServices" Member="xtblServices">
+    <Type Name="xtblService">
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceDescript" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ServiceDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpireBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Expr1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.xtblCustomerStatus" Member="xtblCustomerStatus">
+    <Type Name="xtblCustomerStatus">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameSname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BianehPardakhti" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mandeh" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RezerverID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceDescript" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ServiceDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.xtblPardakhti" Member="xtblPardakhtis">
+    <Type Name="xtblPardakhti">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameSname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RezerverID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RezerveDate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceDescript" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="BianehPardakhti" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.xtblForooshRoozane" Member="xtblForooshRoozanes">
+    <Type Name="xtblForooshRoozane">
+      <Column Name="RezerveDate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ForooshRoozane" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.xtblRezervBelit" Member="xtblRezervBelits">
+    <Type Name="xtblRezervBelit">
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Mandeh" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BianehPardakhti" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="QuanTity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceDescript" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RezerverID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StaffID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RezerveID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RezerveDate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

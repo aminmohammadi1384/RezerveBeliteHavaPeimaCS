@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10" name="LSC_BeliteHavaPeyma">
+  <DataContextMoniker Name="/LSC_BeliteHavaPeymaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3d535d00-fe2d-4ea1-884d-6061380f6950" absoluteBounds="7.875, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/Custumer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3362bca2-dbbe-4e37-b1bc-dd58f1c3130c" absoluteBounds="7.89, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="560158a6-0f60-4e94-94d7-cfd6deae892b" absoluteBounds="5.625, 0.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/RezerveTicket" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fabc2a98-7569-4fc9-a7e9-100c495f8ace" absoluteBounds="5.6400000000000006, 1.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 1.44794840494792); (7.625 : 1.44794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LSC_BeliteHavaPeymaDataContext/Custumer/Custumer_RezerveTicket" />
+      <nodes>
+        <classShapeMoniker Id="3d535d00-fe2d-4ea1-884d-6061380f6950" />
+        <classShapeMoniker Id="560158a6-0f60-4e94-94d7-cfd6deae892b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1472cd53-a37d-49b4-b16c-d94cc8bb78f6" absoluteBounds="3, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/ServicesDef" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98f6587d-86d5-48ba-a89e-93283143b6e3" absoluteBounds="3.015, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 1.54409912109375); (5.625 : 1.54409912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LSC_BeliteHavaPeymaDataContext/ServicesDef/ServicesDef_RezerveTicket" />
+      <nodes>
+        <classShapeMoniker Id="1472cd53-a37d-49b4-b16c-d94cc8bb78f6" />
+        <classShapeMoniker Id="560158a6-0f60-4e94-94d7-cfd6deae892b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e6be936d-881b-49bb-85b0-7359fa0562a3" absoluteBounds="4.25, 3.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/ServiceType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e52796a-2fe8-4208-9eb3-d6d40b2a4006" absoluteBounds="4.2650000000000006, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 3.875); (4.625 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LSC_BeliteHavaPeymaDataContext/ServiceType/ServiceType_ServicesDef" />
+      <nodes>
+        <classShapeMoniker Id="e6be936d-881b-49bb-85b0-7359fa0562a3" />
+        <classShapeMoniker Id="1472cd53-a37d-49b4-b16c-d94cc8bb78f6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5a4a6616-4d93-428b-a968-8db5579b4384" absoluteBounds="7.5, 3.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/StaffsTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8441cf98-1ddd-48ed-9003-07b99ac91038" absoluteBounds="7.515, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.5 : 4.63544840494792); (6.875 : 4.63544840494792); (6.875 : 3.1651025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LSC_BeliteHavaPeymaDataContext/StaffsTable/StaffsTable_RezerveTicket" />
+      <nodes>
+        <classShapeMoniker Id="5a4a6616-4d93-428b-a968-8db5579b4384" />
+        <classShapeMoniker Id="560158a6-0f60-4e94-94d7-cfd6deae892b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1dbeaf20-148f-42a3-9cde-f9f6100b7b4e" absoluteBounds="1.875, 3, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/userInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e2c4bcad-3216-47ae-9643-3bdef8a26bb2" absoluteBounds="1.8900000000000001, 3.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a577b6f9-d12b-4005-aad9-e6f69bdea669" absoluteBounds="0.5, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/xtblBelitha" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48704b9e-55ae-40e6-b3cc-73dfa5490387" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e117c24-5efa-4ef3-9b9d-06417e6ee35c" absoluteBounds="5, 5.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/xtblService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5fe26b71-0eff-4cbd-8479-c0c8d70d5a85" absoluteBounds="5.0150000000000006, 6.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90abefda-1399-411f-be3d-e7d639e96ba6" absoluteBounds="1.125, 4.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/xtblCustomerStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf576caa-1c70-4cc6-b78e-1f5cdce8f63a" absoluteBounds="1.1400000000000001, 5.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eddaae28-6088-49de-9bce-70b2699116ed" absoluteBounds="1.125, 7.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/xtblPardakhti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1be2b019-92ca-41f6-a778-7bae7022fdff" absoluteBounds="1.1399999999999997, 7.8350000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="179967e0-00e4-4edb-83fa-c733e896fdd3" absoluteBounds="4.875, 8.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/xtblForooshRoozane" />
+      <nestedChildShapes>
+        <elementListCompartment Id="367a8326-b69b-4864-80f6-0441b18b2482" absoluteBounds="4.89, 8.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="497cc708-d3ff-4f26-b280-3a2e92cabbe2" absoluteBounds="7.625, 6.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/LSC_BeliteHavaPeymaDataContext/xtblRezervBelit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08892061-df6c-47be-a62c-1d04f7277605" absoluteBounds="7.6400000000000006, 6.7100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
